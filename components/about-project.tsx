@@ -11,7 +11,7 @@ const facts = [
   },
   {
     title: 'Who made it',
-    body: 'Alexander Kennedy, and sometimes AI. When AI helped, it is mentioned within that project.',
+    body: 'Created by Alexander Kennedy with AI assistance from v0 by Vercel. v0 helped design and implement this site, including the purple theme, page layout, GitHub project listing, and contact section. AI assistance on other projects is noted within each project.',
   },
 ]
 
