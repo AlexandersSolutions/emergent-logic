@@ -1,31 +1,24 @@
 import { SectionHeading } from '@/components/section-heading'
 import { OWNER_NAME } from '@/lib/site'
 
-const aboutMeParagraphs: string[] = [
-  // Add your About Me paragraphs here. Each string becomes its own paragraph.
+const interests = [
+  ['Software engineering', 'Building readable, maintainable software and understanding the decisions behind it.'],
+  ['Systems & computer science', 'Exploring how components interact and how the foundations shape the whole.'],
+  ['Data analytics', 'Turning information into useful questions, clearer understanding, and practical decisions.'],
 ]
 
 export function AboutMe() {
   return (
-    <section id="about-me" aria-labelledby="about-me-title" className="border-t">
-      <div className="mx-auto grid max-w-5xl gap-12 px-6 py-24 md:grid-cols-[1fr_1.6fr]">
-        <div className="flex flex-col gap-4">
-          <SectionHeading index="03" id="about-me-title" title="About me" />
-          <p className="font-medium text-primary">{OWNER_NAME}</p>
+    <section id="about-me" aria-labelledby="about-me-title" className="light-section section-shell">
+      <div className="site-container about-grid">
+        <div><SectionHeading index="02" id="about-me-title" title="A work in progress. By design." />
+          <p className="mt-6 font-medium">{OWNER_NAME}</p>
+          <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">I’m an aspiring software engineer developing my knowledge across software, computer science, systems engineering, and data analytics.</p>
+          <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">This portfolio grows with that process: a place to share what I build and make the thinking behind the work visible.</p>
         </div>
-        <div className="flex flex-col gap-5 text-lg leading-relaxed text-muted-foreground md:pt-10">
-          {aboutMeParagraphs.length > 0 ? (
-            aboutMeParagraphs.map((paragraph) => (
-              <p key={paragraph} className="text-pretty">
-                {paragraph}
-              </p>
-            ))
-          ) : (
-            <p className="rounded-lg border border-dashed p-6 text-base">
-              More about me is coming soon.
-            </p>
-          )}
-        </div>
+        <div><p className="eyebrow mb-6">Areas of exploration</p><dl className="interest-list">
+          {interests.map(([title, description]) => <div key={title}><dt>{title}</dt><dd>{description}</dd></div>)}
+        </dl></div>
       </div>
     </section>
   )

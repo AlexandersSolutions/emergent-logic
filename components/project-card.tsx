@@ -14,6 +14,7 @@ const detailFields: { key: keyof Omit<ProjectDetails, 'technologies'>; label: st
   { key: 'problem', label: 'Problem' },
   { key: 'contributions', label: 'My contributions' },
   { key: 'decisions', label: 'Engineering decisions' },
+  { key: 'outcomes', label: 'Outcomes' },
   { key: 'lessons', label: 'Lessons learned' },
   { key: 'aiAssistance', label: 'AI assistance' },
 ]
@@ -23,13 +24,13 @@ export function ProjectCard({ repo, index, details }: ProjectCardProps) {
   const filledFields = detailFields.filter(({ key }) => details?.[key])
 
   return (
-    <li className="group grid gap-4 border-b py-8 transition-colors md:grid-cols-[4rem_1fr_auto] md:gap-8">
-      <span className="font-mono text-sm text-muted-foreground/70 transition-colors group-hover:text-primary">
+    <li className="project-row group grid gap-4 border-b py-9 md:grid-cols-[4rem_1fr_auto] md:gap-8">
+      <span className="font-mono text-sm text-muted-foreground transition-colors group-hover:text-primary">
         {String(index).padStart(2, '0')}
       </span>
 
       <div className="flex min-w-0 flex-col gap-3">
-        <h3 className="break-words font-mono text-lg font-semibold tracking-tight">{repo.name}</h3>
+        <h3 className="break-words text-xl font-semibold tracking-tight sm:text-2xl">{repo.name}</h3>
         {repo.description && (
           <p className="max-w-2xl text-pretty leading-relaxed text-muted-foreground">
             {repo.description}
@@ -71,7 +72,7 @@ export function ProjectCard({ repo, index, details }: ProjectCardProps) {
           href={repo.html_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
+          className="inline-flex min-h-11 items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
         >
           Repository
           <ArrowUpRight className="size-4" aria-hidden="true" />
@@ -82,7 +83,7 @@ export function ProjectCard({ repo, index, details }: ProjectCardProps) {
             href={repo.homepage}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
+            className="inline-flex min-h-11 items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
           >
             Live demo
             <ArrowUpRight className="size-4" aria-hidden="true" />

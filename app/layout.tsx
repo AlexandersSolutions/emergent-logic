@@ -9,8 +9,7 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   title: 'Emergent Logic | Alexander Kennedy',
   description:
-    'Emergent Logic: Every system has a beginning. The coding portfolio of Alexander Kennedy, hosting his GitHub projects and growing over time.',
-  generator: 'v0.app',
+    'Alexander Kennedy’s portfolio: exploring software engineering, systems, and data through projects, source code, and engineering decisions.',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },

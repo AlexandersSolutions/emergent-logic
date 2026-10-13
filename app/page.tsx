@@ -10,15 +10,15 @@ export default function Page() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
-        <AboutProject />
         <Projects />
         <AboutMe />
+        <AboutProject />
         <Contact />
       </main>
-      <footer className="border-t">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <footer className="light-section border-t">
+        <div className="site-container flex flex-col gap-2 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             <span className="font-medium text-foreground">{SITE_TITLE}</span>, made by {OWNER_NAME}.
           </p>

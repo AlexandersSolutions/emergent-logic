@@ -6,16 +6,18 @@ import { projectDetails } from '@/lib/project-details'
 
 export async function Projects() {
   const repos = await getPublicRepos()
+  // Curated notes take priority; all other repositories retain GitHub’s recency order.
+  repos.sort((a, b) => Number(Boolean(projectDetails[b.name])) - Number(Boolean(projectDetails[a.name])))
 
   return (
-    <section id="projects" aria-labelledby="projects-title" className="border-t">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+    <section id="projects" aria-labelledby="projects-title" className="section-shell projects-section">
+      <div className="site-container">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
-            index="02"
+            index="01"
             id="projects-title"
-            title="Projects"
-            description="Pulled live from my public GitHub repositories, so new work shows up here automatically."
+            title="Work, with the thinking behind it."
+            description="An evolving collection of public projects. Explore the source, implementation, and engineering notes where available."
           />
           <a
             href={GITHUB_PROFILE_URL}

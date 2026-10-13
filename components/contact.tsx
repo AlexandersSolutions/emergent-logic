@@ -5,19 +5,19 @@ import { CONTACT_EMAIL } from '@/lib/site'
 
 export function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-title" className="border-t">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+    <section id="contact" aria-labelledby="contact-title" className="light-section section-shell contact-section">
+      <div className="site-container">
         <SectionHeading
           index="04"
           id="contact-title"
-          title="Contact"
+          title="Let’s start a conversation."
           description="Questions, opportunities, or feedback on a project are all welcome."
         />
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-lg border bg-border sm:grid-cols-2">
+        <ul className="contact-links mt-10 grid gap-4 sm:grid-cols-2">
           <li>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="group flex h-full items-center justify-between gap-4 bg-background/60 p-6 transition-colors hover:bg-background/30 sm:p-8"
+              className="group flex h-full items-center justify-between gap-4 border border-border bg-white/30 p-6 transition-colors hover:bg-white/60 sm:p-8"
             >
               <span className="flex min-w-0 flex-col gap-2">
                 <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-primary">
@@ -37,7 +37,7 @@ export function Contact() {
               href={GITHUB_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full items-center justify-between gap-4 bg-background/60 p-6 transition-colors hover:bg-background/30 sm:p-8"
+              className="group flex h-full items-center justify-between gap-4 border border-border bg-white/30 p-6 transition-colors hover:bg-white/60 sm:p-8"
             >
               <span className="flex min-w-0 flex-col gap-2">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
