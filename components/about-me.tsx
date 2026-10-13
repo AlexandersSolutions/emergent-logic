@@ -1,4 +1,5 @@
-import { GITHUB_PROFILE_URL, GITHUB_USERNAME } from '@/lib/github'
+import { SectionHeading } from '@/components/section-heading'
+import { OWNER_NAME } from '@/lib/site'
 
 const aboutMeParagraphs: string[] = [
   // Add your About Me paragraphs here. Each string becomes its own paragraph.
@@ -6,32 +7,24 @@ const aboutMeParagraphs: string[] = [
 
 export function AboutMe() {
   return (
-    <section id="about-me" className="border-t bg-secondary/60">
-      <div className="mx-auto grid max-w-5xl gap-10 px-6 py-20 md:grid-cols-[1fr_2fr]">
-        <div>
-          <h2 className="text-3xl font-semibold tracking-tight">About me</h2>
-          <p className="mt-2 font-medium text-primary">Alexander Kennedy</p>
+    <section id="about-me" aria-labelledby="about-me-title" className="border-t">
+      <div className="mx-auto grid max-w-5xl gap-12 px-6 py-24 md:grid-cols-[1fr_1.6fr]">
+        <div className="flex flex-col gap-4">
+          <SectionHeading index="03" id="about-me-title" title="About me" />
+          <p className="font-medium text-primary">{OWNER_NAME}</p>
         </div>
-        <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+        <div className="flex flex-col gap-5 text-lg leading-relaxed text-muted-foreground md:pt-10">
           {aboutMeParagraphs.length > 0 ? (
-            aboutMeParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+            aboutMeParagraphs.map((paragraph) => (
+              <p key={paragraph} className="text-pretty">
+                {paragraph}
+              </p>
+            ))
           ) : (
-            <p className="rounded-xl border border-dashed bg-card p-6 text-base">
+            <p className="rounded-lg border border-dashed p-6 text-base">
               More about me is coming soon.
             </p>
           )}
-          <p className="text-base">
-            Find me on GitHub at{' '}
-            <a
-              href={GITHUB_PROFILE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-primary hover:underline"
-            >
-              @{GITHUB_USERNAME}
-            </a>
-            .
-          </p>
         </div>
       </div>
     </section>

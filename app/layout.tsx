@@ -7,9 +7,9 @@ const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
-  title: 'Gray Eminence | Coding Projects by Alexander Kennedy',
+  title: 'Emergent Logic | Alexander Kennedy',
   description:
-    'Gray Eminence is where Alexander Kennedy hosts his GitHub coding projects, a growing portfolio for future employers, friends, and family.',
+    'Emergent Logic: Every system has a beginning. The coding portfolio of Alexander Kennedy, hosting his GitHub projects and growing over time.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#7c3aed',
+  colorScheme: 'dark',
+  themeColor: '#0c0814',
 }
 
 export default function RootLayout({
